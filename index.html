@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Adivinar</title>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="nav">
+  <img src="public/img/logo.svg" alt="" class="logo">
+  <h1>¡Hey adivina el color!</h1>
+  <h2><span id="colorDisplay"></span></h2>
+  </header>
+  <div id="stripe">
+    <button id="reset">
+      Nuevos colores.
+    </button>
+    <span id="message"></span>
+    <button id="easyBtn" class="mode">Fácil</button>
+    <button id="hardBtn" class="mode selected">Dificil</button>
+    <button id="boton">Instrucciones</button>
+  </div>
+  <div id="container">
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+    <div class="square">
+    </div>
+  </div>
+  <div id="instructionsBtn" class="instructions_style" style="display:none;">
+    <p>¿Cómo jugar? <br><br>Sencillo, el juego te brindara un color en formato rgb y tú deberas adivinar clickeando el circulo correcto.</p>
+  </div>
+  <footer>
+    <h1> ¡Gracias por divertirte con mi juego!</h1>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
