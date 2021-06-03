@@ -1,4 +1,4 @@
-let numSquares = 9
+let numSquares = 12
 let colors = []
 let pickedColor
 let squares = document.querySelectorAll(".square")
@@ -19,7 +19,7 @@ function init() {
 }
 
 function setUpModeBtns() {
-    for (var i = 0; i < modeBtn.length; i++) {
+    for (let i = 0; i < modeBtn.length; i++) {
         modeBtn[i].addEventListener("click", function () {
             modeBtn[0].classList.remove("selected")
             modeBtn[1].classList.remove("selected")
@@ -31,11 +31,11 @@ function setUpModeBtns() {
 }
 
 function setUpSquares() {
-    for (var i = 0; i < squares.length; i++) {
+    for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("click", function () {
-            var clickedColor = this.style.background
+            let clickedColor = this.style.background
             if (clickedColor === pickedColor) {
-                messageDisplay.textContent = "¡Felictaciones adivinaste!"
+                messageDisplay.textContent = "¡Felicitaciones adivinaste!"
                 resetBtn.textContent = "Jugar de nuevo"
                 changeColors(clickedColor)
                 h1.style.background = clickedColor
@@ -52,7 +52,7 @@ function reset() {
     colors = generateRandomColors(numSquares)
     pickedColor = pickColor()
     colorDisplay.textContent = pickedColor
-    for (var i = 0; i < squares.length; i++) {
+    for (let i = 0; i < squares.length; i++) {
         if (colors[i]) {
             squares[i].style.background = colors[i]
             squares[i].style.display = "block"
@@ -70,38 +70,36 @@ resetBtn.addEventListener("click", function () {
     reset()
 })
 
-
-
 function changeColors(color) {
-    for (var i = 0; i < squares.length; i++) {
+    for (let i = 0; i < squares.length; i++) {
         squares[i].style.background = color
     }
 }
 
 function pickColor() {
-    var random = Math.floor(Math.random() * colors.length)
+    let random = Math.floor(Math.random() * colors.length)
     return colors[random]
 }
 
 function generateRandomColors(num) {
-    var arr = []
-    for (var i = 0; i < num; i++) {
+    let arr = []
+    for (let i = 0; i < num; i++) {
         arr[i] = randomColor()
     }
     return arr
 }
 
 function randomColor() {
-    var r = Math.floor(Math.random() * 256)
-    var b = Math.floor(Math.random() * 256)
-    var g = Math.floor(Math.random() * 256)
+    let r = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 256)
+    let g = Math.floor(Math.random() * 256)
     return "rgb(" + r + ", " + g + ", " + b + ")"
 
 }
 
 //almacenando el div y el boton en unas variables
-var div = document.getElementById('instructionsBtn');
-var but = document.getElementById('boton');
+let div = document.getElementById('instructionsBtn');
+let but = document.getElementById('boton');
 
 //la funcion que oculta y muestra
 function showHide(e){
@@ -120,7 +118,7 @@ but.addEventListener("click", showHide, false);
 document.addEventListener("click", function(e){
 console.log('clic');
 //obtiendo informacion del DOM para  
-var clic = e.target;
+let clic = e.target;
 console.log(clic);
 if(div.style.display == "block" && clic != div){
  div.style.display = "none";
